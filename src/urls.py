@@ -18,12 +18,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 
+# Same App importing
+from profiles_api.urls import router
+
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
+
     # Apps URLs included
     path('api/', include('profiles_api.urls')),
+
+    # We connect our HelloViewSet just using this URL. No need do define URL in between APP.
+    path('api/', include(router.urls)),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

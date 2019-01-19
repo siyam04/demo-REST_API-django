@@ -19,3 +19,16 @@ class UserProfile(models.Model):
     def __str__(self):
         """ Shows the built-in User Name """
         return self.name
+
+
+class ProfileFeedItem(models.Model):
+    """ Profile status update """
+
+    user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    status_text = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        """ Shows the status_text """
+        return self.status_text
+
