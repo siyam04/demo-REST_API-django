@@ -28,6 +28,7 @@ urlpatterns = [
 
     # Apps URLs included
     path('api/', include('profiles_api.urls')),
+    path('blog/', include('blog.urls')),
 
     # We connect our HelloViewSet just using this URL. No need do define URL in between APP.
     path('api/', include(router.urls)),

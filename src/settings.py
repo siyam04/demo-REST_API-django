@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'profiles_api',
+    'blog',
 
 ]
 
